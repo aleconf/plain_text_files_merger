@@ -9,7 +9,7 @@ Clearly, checking the file extension is not a suitable method to recognise plain
 # Description
 
 The code asks for the following information:
-- the full path (e.g. `/Users/aleconf/GitHub/merger_plain_text_files`) of the directory containing the plain text files to be merged: the input is validated, i.e. the code verifies that such directory actually exists;
+- the full path (e.g. `/Users/aleconf/GitHub/plain_text_files_merger`) of the directory containing the plain text files to be merged: the input is validated, i.e. the code verifies that such directory actually exists;
 - the string to write in the line separating the different files (Enter for a blank line);
 - the full path of the directory where the merged file should be saved: the input is validated, i.e. the code verifies that such directory actually exists;
 - the name of the output file: the input is validated, i.e. the code verifies that such file does not exist yet.
