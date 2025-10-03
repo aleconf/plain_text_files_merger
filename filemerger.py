@@ -27,7 +27,11 @@ def is_plain_text_file(path):
 
 
 def merger(input_dir, separator, output_dir, output_file):
-    """Merging all plain text files using line containing a given string as a separator."""
+    """Merging all plain text files.
+
+    A line containing a given string is used as a separator.
+    """
+
     file_list = list()
     for _, _, files in os.walk(input_dir):
         for filename in files:
@@ -50,7 +54,8 @@ def main():
     flag = True
     while flag:
         text_dir = input(
-            "\nPlease, insert the full path of the directory containing the plain text files to be merged. \n"
+            "\nPlease, insert the full path of the directory containing "
+            + "the plain text files to be merged. \n"
         )
         if os.path.isdir(text_dir):
             flag = False
@@ -58,13 +63,15 @@ def main():
             print("    Directory is invalid or non-existent.")
 
     separating = input(
-        "\nPlease, insert the string to write in the line separating the different files (press Enter for a blank line). \n"
+        "\nPlease, insert the string to write in the line separating the "
+        + "different files (press Enter for a blank line). \n"
     )
 
     flag = True
     while flag:
         saving_dir = input(
-            "\nPlease, insert the full path of the directory where the result should be saved. \n"
+            "\nPlease, insert the full path of the directory where the "
+            + "result should be saved. \n"
         )
         if os.path.isdir(saving_dir):
             flag = False
@@ -74,7 +81,8 @@ def main():
     flag = True
     while flag:
         saving_file = input(
-            "\nPlease, insert the filename (e.g. result.xyz) where the result should be saved. \n"
+            "\nPlease, insert the filename (e.g. result.xyz) where the "
+            + "result should be saved. \n"
         )
         check_file = os.path.join(saving_dir, saving_file)
         if os.path.isfile(check_file):
