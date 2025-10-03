@@ -29,7 +29,8 @@ All executable files have been created using PyInstaller.
         ```
         pwd
         ```
-
+- On a Windows computer:
+    - run the file `filemerger_win.exe` which can be found inside the folder `dist`.
 
 ### Remark for non-technical users
 
@@ -39,5 +40,5 @@ Clearly, one could prefer not to have any separator at all in the merged file, o
 
 # To-do list
 
-* [ ] Create a Windows executable file.
+* [x] Create a Windows executable file.
 * [ ] Create a GUI with a File Explorer that allows the selection of only a subset of all plain text files and their rearrangement in the desired, customised merging order.
