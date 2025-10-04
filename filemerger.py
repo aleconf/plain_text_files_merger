@@ -3,6 +3,7 @@
 import chardet
 import io
 import os
+from pathlib import Path
 import shutil
 
 
@@ -33,7 +34,9 @@ def merger(input_dir, separator, output_dir, output_file):
     """
 
     file_list = list()
-    for _, _, files in os.walk(input_dir):
+    for current_path, _, files in os.walk(input_dir):
+        if Path(current_path) != Path(input_dir):
+            continue
         for filename in files:
             full_file = os.path.join(input_dir, filename)
             if is_plain_text_file(full_file) and filename[0] != ".":
