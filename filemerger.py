@@ -3,7 +3,7 @@
 import chardet
 import io
 import os
-from pathlib import Path
+# from pathlib import Path
 import shutil
 
 
@@ -32,15 +32,21 @@ def merger(input_dir, separator, output_dir, output_file):
 
     A line containing a given string is used as a separator.
     """
-
-    file_list = list()
-    for current_path, _, files in os.walk(input_dir):
-        if Path(current_path) != Path(input_dir):
-            continue
-        for filename in files:
-            full_file = os.path.join(input_dir, filename)
-            if is_plain_text_file(full_file) and filename[0] != ".":
-                file_list.append(full_file)
+    file_list = [
+        os.path.join(input_dir, f)
+        for f in os.listdir(input_dir)
+        if os.path.isfile(os.path.join(input_dir, f))
+        and is_plain_text_file(os.path.join(input_dir, f))
+        and f[0] != "."
+    ]
+    #    file_list = list()
+    #    for current_path, _, files in os.walk(input_dir):
+    #        if Path(current_path) != Path(input_dir):
+    #            continue
+    #        for filename in files:
+    #            full_file = os.path.join(input_dir, filename)
+    #            if is_plain_text_file(full_file) and filename[0] != ".":
+    #                file_list.append(full_file)
 
     with open(os.path.join(output_dir, output_file), "wb") as merged_file:
         for i, f in enumerate(file_list):
